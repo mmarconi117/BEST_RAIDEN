@@ -20,7 +20,10 @@ header {
   background-image: url('../backgroundmkheader.jpeg');
   background-size: cover;
   background-position: center;
+  margin: -30px; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
+
 
 
 .youtube-logo {
@@ -30,24 +33,60 @@ header {
   transition: filter 300ms;
 }
 
-.youtube-logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
+.youtube-logo,
 .twitch-logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  will-change: transform;
+  transition: transform 0.3s; /* Adjust transition duration as needed */
 }
 
+.youtube-logo:hover,
 .twitch-logo:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  transform: scale(1.1); /* Increase scale on hover */
 }
+
 
 h1 {
   color: rgb(51, 25, 202);
 }
+
+
+.card {
+  display: flex;
+}
+
+.left-image {
+  width: 70%; /* Adjust width as needed */
+  max-width: 500px; /* Adjust maximum width as needed */
+  height: auto; /* Set height to match the height of the right image */
+  margin-right: 1rem; /* Adjust margin as needed */
+}
+
+
+.centered-image {
+  display: flex;
+  justify-content: center;
+  max-width: 100%; /* Set maximum width to prevent the picture from becoming too big */
+  margin-right: 1rem;
+  margin-left: -0.5rem;
+}
+
+.espn {
+  max-width: 20rem;
+  max-height: 16rem;
+}
+
+
+.combo {
+  width: 70%; /* Adjust width as needed */
+  max-width: 500px; /* Adjust maximum width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 1rem; /* Adjust margin as needed */
+}
+
+
+
 
 .summary-box {
   background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
