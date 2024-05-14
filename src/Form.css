@@ -1,37 +1,41 @@
 /* Form.css */
 
 .formContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  padding: 1rem;
+   /* Add padding for spacing */
+}
 
-  .formGroup {
-    margin-bottom: 1rem;
-  }
+.formGroup {
+  margin-bottom: 1rem;
+}
 
-  .formLabel {
-    margin-bottom: 0.5rem;
-    color: white;
-  }
+.formLabel {
+  margin-bottom: 0.5rem;
+  color: white;
+}
 
-  .formInput {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    background-color: yellow;
-  }
+.formInput {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: yellow;
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Add border radius */
+}
 
-  .formButton {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+.formButton {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  .formButton:hover {
-    background-color: #0056b3;
-  }
+.formButton:hover {
+  background-color: #0056b3;
+}

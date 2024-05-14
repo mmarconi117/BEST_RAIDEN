@@ -9,9 +9,11 @@ import './App.css';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
+  const [rootHeight, setRootHeight] = useState('auto');
 
   const toggleForm = () => {
     setShowForm(!showForm);
+    setRootHeight(showForm ? 'auto' : '200vh');
   };
 
   return (
