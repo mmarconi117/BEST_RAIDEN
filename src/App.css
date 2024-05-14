@@ -7,7 +7,7 @@ body {
 
 #root {
   width: 100%;
-  height: 240vh; /* Change height to 100vh */
+  height: 200vh; /* Change height to 100vh */
   text-align: center;
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHGjaSn_4pohHeV1sRyGPwEBLSD65b5t8A5IAELNu0qw&s');
   background-size: cover;
