@@ -1,10 +1,11 @@
 import React from 'react';
 import './Form.css';
 
-function Form({ toggleForm }) {
+function Form({ toggleForm, onFormSubmit }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    onFormSubmit(); // Call onFormSubmit to set submitted state to true
     toggleForm(); // Call toggleForm to hide the form
   }
 

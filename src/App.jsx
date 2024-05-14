@@ -9,11 +9,15 @@ import './App.css';
 
 function App() {
   const [showForm, setShowForm] = useState(false);
-  const [rootHeight, setRootHeight] = useState('auto');
+  const [submitted, setSubmitted] = useState(false);
 
   const toggleForm = () => {
     setShowForm(!showForm);
-    setRootHeight(showForm ? 'auto' : '200vh');
+    setSubmitted(false); // Reset submitted state when form is toggled
+  };
+
+  const handleFormSubmit = () => {
+    setSubmitted(true); // Set submitted state to true when form is submitted
   };
 
 
@@ -52,7 +56,7 @@ function App() {
         <button className="submit-request-btn" onClick={toggleForm}>
           Submit a Request
         </button>
-        {showForm && <Form toggleForm={toggleForm}/>}
+        {showForm && <Form toggleForm={toggleForm} onFormSubmit={handleFormSubmit}/>}
       </div>
       <footer>
         <div class="contact-info">
