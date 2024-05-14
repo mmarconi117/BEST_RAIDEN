@@ -16,6 +16,8 @@ function App() {
     setRootHeight(showForm ? 'auto' : '200vh');
   };
 
+
+
   return (
     <>
       <header>
@@ -50,7 +52,7 @@ function App() {
         <button className="submit-request-btn" onClick={toggleForm}>
           Submit a Request
         </button>
-        {showForm && <Form />}
+        {showForm && <Form toggleForm={toggleForm}/>}
       </div>
       <footer>
         <div class="contact-info">

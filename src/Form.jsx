@@ -1,9 +1,13 @@
-// Form.jsx
-
 import React from 'react';
 import './Form.css';
 
-function Form({ showForm, toggleForm }) {
+function Form({ toggleForm }) {
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    toggleForm(); // Call toggleForm to hide the form
+  }
+
   return (
     <div className="formContainer">
       <div className="formGroup">
@@ -18,7 +22,7 @@ function Form({ showForm, toggleForm }) {
         <label className="formLabel" htmlFor="message">Message:</label>
         <textarea className="formInput" id="message" name="message" rows="4"></textarea>
       </div>
-      <button className="formButton" type="submit">Submit</button>
+      <button className="formButton" type="submit" onClick={onSubmit}>Submit</button>
     </div>
   );
 }
