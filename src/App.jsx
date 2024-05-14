@@ -1,5 +1,3 @@
-// App.jsx
-
 import { useState } from 'react';
 import twitchLogo from '/twitchLogo.png';
 import youtubeLogo from '/youtubeLogo.png';
@@ -19,8 +17,6 @@ function App() {
   const handleFormSubmit = () => {
     setSubmitted(true); // Set submitted state to true when form is submitted
   };
-
-
 
   return (
     <>
@@ -62,11 +58,9 @@ function App() {
         <div class="contact-info">
           <p className='email'>Email: <a href="mailto:bestmkraiden@gmail.com">bestmkraiden@gmail.com</a></p>
           <p className='number'>Phone number: <a href="tel:+12243003699">(224)-300-3699</a></p>
-          <p className='copy'>© 2024 Best_Raiden. All rights reserved.</p>
+          <p className='copy'>© 2024 BEST_RAIDEN. All rights reserved.</p>
         </div>
       </footer>
-
-
     </>
   );
 }
