@@ -142,6 +142,8 @@ footer {
   background-size: cover; /* Ensure the background image covers the entire element */
   background-position: center;
   margin-top: 50px;
+  margin: -30px; /* Remove default margin */
+  padding: 10px;
 }
 
 .contact-info {
