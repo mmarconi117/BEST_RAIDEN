@@ -3,28 +3,27 @@ Introduction
 This project is a demonstration of building a dynamic web application using React for the frontend and Node.js for the backend. It showcases the integration of various features such as state management, responsive design, form handling, and GitHub version control.
 
 Technologies Used
-Frontend: React.js
-Backend: Node.js (v16)
-Styling: CSS
-Assets: Images
+
+  Frontend: React.js
+  Backend: Node.js (v16)
+  Styling: CSS
+  Assets: Images
+
+
+
 Features Implemented
-Header: Incorporates logos with external links to YouTube and Twitch.
-Main Section: Displays a brief introduction and summary about the project, styled with CSS for an appealing look.
-Form: Allows users to submit requests, toggling visibility when the "Submit a Request" button is clicked.
-Footer: Contains contact information including email and phone number, styled with CSS for aesthetics.
+
+  Header: Incorporates logos with external links to YouTube and Twitch.
+  Main Section: Displays a brief introduction and summary about the project, styled with CSS for an appealing look.
+  Form: Allows users to submit requests, toggling visibility when the "Submit a Request" button is clicked.
+  Footer: Contains contact information including email and phone number, styled with CSS for aesthetics.
+  
 Changes Made
-Integrated state management with React hooks to toggle the visibility of the form.
-Styled components with CSS for enhanced user interface and responsiveness.
-Configured GitHub repository for version control, facilitating collaborative development and deployment.
-Acknowledgements
-This project was created by [Your Name] and is inspired by [any relevant inspirations]. Feel free to contribute or provide feedback!
-
-
-
-
-
-
-
+  Integrated state management with React hooks to toggle the visibility of the form.
+  Styled components with CSS for enhanced user interface and responsiveness.
+  Configured GitHub repository for version control, facilitating collaborative development and deployment.
+  Acknowledgements
+  This project was created by Michael Marconi.  Feel free to contribute or provide feedback!
 
 
 
