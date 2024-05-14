@@ -19,6 +19,7 @@ Features Implemented
   Footer: Contains contact information including email and phone number, styled with CSS for aesthetics.
   
 Changes Made
+
   Integrated state management with React hooks to toggle the visibility of the form.
   Styled components with CSS for enhanced user interface and responsiveness.
   Configured GitHub repository for version control, facilitating collaborative development and deployment.
