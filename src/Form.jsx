@@ -1,49 +1,71 @@
-import React, { useState } from 'react';
-import './Form.css';
+import React, { useState } from "react";
+import axios from "axios";
+import './Form.css'; // Import the CSS file
 
-function Form({ toggleForm, onFormSubmit }) {
-  const [submitted, setSubmitted] = useState(false);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+export default function Form() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Check if name and email fields are not empty
-    if (!name || !email) {
-      setErrorMessage('Please provide name and email');
-      return;
-    }
-    // Call the parent component's callback function to handle form submission
-    onFormSubmit();
-    // Set submitted state to true
-    setSubmitted(true);
-    // Reset form fields
-    setName('');
-    setEmail('');
-    // Clear error message
-    setErrorMessage('');
-  };
+    const handleSubmit = async (event) => {
+        event.preventDefault();
 
-  return (
-    <div className="formContainer">
-      <div className="formGroup">
-        <label className="formLabel" htmlFor="name">Name:</label>
-        <input className="formInput" type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
-      </div>
-      <div className="formGroup">
-        <label className="formLabel" htmlFor="email">Email:</label>
-        <input className="formInput" type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </div>
-      <div className="formGroup">
-        <label className="formLabel" htmlFor="message">Message:</label>
-        <textarea className="formInput" id="message" name="message" rows="4"></textarea>
-      </div>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-      <button className="formButton" type="submit" onClick={handleSubmit}>Submit</button>
-      {submitted && <p className="success-message">Submitted Successfully</p>}
-    </div>
-  );
+        try {
+            const response = await axios.post("http://localhost:5000/api/send-email", {
+                name,
+                email,
+                message
+            });
+
+            console.log("Email sent successfully:", response.data);
+            setSuccessMessage("Email sent successfully!");
+        } catch (error) {
+            console.error("Error sending email:", error);
+        }
+    };
+
+    return (
+        <div className="container">
+            <form onSubmit={handleSubmit}>
+                <div className="formGroup">
+                    <label htmlFor="name" className="formLabel">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                        className="formInput"
+                    />
+                </div>
+                <div className="formGroup">
+                    <label htmlFor="email" className="formLabel">Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        className="formInput"
+                    />
+                </div>
+                <div className="formGroup">
+                    <label htmlFor="message" className="formLabel">Message:</label>
+                    <textarea
+                        id="message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        required
+                        rows="5"
+                        className="formTextarea formInput"
+                    ></textarea>
+                </div>
+                <button type="submit" className="formButton">
+                    Submit
+                </button>
+            </form>
+            {successMessage && <p className="successMessage">Success: {successMessage}</p>}
+        </div>
+    );
 }
-
-export default Form;
